@@ -173,8 +173,11 @@ def home():
 
 @app.get("/viewer")
 def viewer(request: Request):
-    return templates.TemplateResponse("viewer.html", {"request": request})
-
+    return templates.TemplateResponse(
+        request=request,
+        name="viewer.html",
+        context={}
+    )
 
 # ==========================================================
 # District List
